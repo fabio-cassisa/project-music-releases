@@ -1,5 +1,14 @@
 .album {
   position: relative;
+  width: 640px;
+  height: 640px;
+  margin: 100px;
+}
+
+.album img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .album-overlay {
@@ -11,8 +20,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.3s;
+}
+
+.play-button img,
+.favorite-button img,
+.more-button img {
+  filter: invert(1);
+  width: 40px;
+  height: 40px;
 }
 
 .album:hover .album-overlay {
@@ -26,4 +43,25 @@
   border: none;
   cursor: pointer;
   margin: 0 5px;
+}
+
+.album-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+@media (min-width: 768px) {
+  .album-container {
+    flex-wrap: wrap;
+  }
+  .album {
+    flex: 1 1 calc(50% - 25px); /* Taking into account the gap */
+  }
+}
+
+@media (min-width: 1224px) {
+  .album {
+    flex: 1 1 calc(25% - 25px); /* Taking into account the gap */
+  }
 }
