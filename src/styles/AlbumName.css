@@ -1,9 +1,9 @@
-.album-name h2 {
-  font-family: Helvetica, sans-serif;
-  color: #fff;
-  font-size: 15px;
+.album-name {
+  text-align: left; /* Align text to the left */
+  margin-top: 10px; /* Add top margin to create spacing */
 }
 
+.album-name h2,
 .album-name a {
   font-family: Helvetica, sans-serif;
   color: #fff;
@@ -15,3 +15,4 @@
   text-decoration: underline;
   color: #fff;
 }
+

@@ -18,11 +18,16 @@
   margin-bottom: 20px;
   width: 100%; /* Updated width for responsive design */
   max-width: 640px; /* Limit maximum width to 640px */
-  height: 640px;
   position: relative;
-  transition: transform 0.2s ease-in-out;
   cursor: pointer;
-  overflow: hidden;
+  display: flex; /* Make the album a flex container */
+  flex-direction: column; /* Arrange items vertically */
+}
+
+.cover-wrapper {
+  transition: transform 0.2s ease-in-out;
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Center text content */
 }
 
 .album img {
@@ -32,37 +37,50 @@
 }
 
 .album-overlay {
+  display: flex;
+  justify-content: space-around; /* Center buttons horizontally */
+  align-items: center; /* Center buttons vertically */
+  opacity: 0; /* Set initial opacity to 0 */
+  transition: opacity 0.3s;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0; /* Set initial opacity to 0 */
-  transition: opacity 0.3s;
+  background: rgba(0, 0, 0, 0.6); /* Add a background overlay */
 }
 
-.album:hover {
+.cover-wrapper:hover {
   transform: scale(1.05); /* Enlarge the album on hover */
 }
 
-.album:hover .album-overlay {
+.cover-wrapper:hover .album-overlay {
   opacity: 1; /* Fade in the overlay on hover */
 }
 
-.play-button img,
-.favorite-button img,
-.more-button img {
+.play-button img {
   filter: invert(1);
-  width: 60px;
-  height: 60px;
+  width: 40px; /* Set play button size */
+  height: 40px;
   transition: transform 0.2s ease-in-out; /* Add transform transition */
 }
 
 .play-button:hover img {
   transform: scale(1.1); /* Slightly enlarge play button on hover */
+}
+
+.favorite-button img,
+.more-button img {
+  filter: invert(1);
+  width: 30px; /* Set favorite and more button size */
+  height: 30px;
+  margin: 10px; /* Add margin to separate buttons */
+  transition: transform 0.2s ease-in-out; /* Add transform transition */
+}
+
+.favorite-button:hover img,
+.more-button:hover img {
+  transform: scale(1.1); /* Slightly enlarge favorite and more buttons on hover */
 }
 
 .play-button,
@@ -71,7 +89,6 @@
   background: none;
   border: none;
   cursor: pointer;
-  margin: 0 5px;
 }
 
 /* Media Queries */
