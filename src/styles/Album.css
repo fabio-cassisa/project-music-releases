@@ -1,8 +1,28 @@
+/* Reset default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.album-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px; /* Add some padding to separate from the edges */
+  gap: 20px; /* Add gap between album items */
+}
+
 .album {
   position: relative;
-  width: 640px;
+  margin-bottom: 20px;
+  width: 100%; /* Updated width for responsive design */
+  max-width: 640px; /* Limit maximum width to 640px */
   height: 640px;
-  margin: 100px;
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .album img {
@@ -20,20 +40,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 1;
+  opacity: 0; /* Set initial opacity to 0 */
   transition: opacity 0.3s;
+}
+
+.album:hover {
+  transform: scale(1.05); /* Enlarge the album on hover */
+}
+
+.album:hover .album-overlay {
+  opacity: 1; /* Fade in the overlay on hover */
 }
 
 .play-button img,
 .favorite-button img,
 .more-button img {
   filter: invert(1);
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
+  transition: transform 0.2s ease-in-out; /* Add transform transition */
 }
 
-.album:hover .album-overlay {
-  opacity: 1;
+.play-button:hover img {
+  transform: scale(1.1); /* Slightly enlarge play button on hover */
 }
 
 .play-button,
@@ -45,23 +74,21 @@
   margin: 0 5px;
 }
 
-.album-container {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-@media (min-width: 768px) {
-  .album-container {
-    flex-wrap: wrap;
-  }
+/* Media Queries */
+@media (min-width: 769px) {
   .album {
-    flex: 1 1 calc(50% - 25px); /* Taking into account the gap */
+    width: calc(25% - 20px); /* 4 albums per row on desktop */
   }
 }
 
-@media (min-width: 1224px) {
+@media (max-width: 768px) {
   .album {
-    flex: 1 1 calc(25% - 25px); /* Taking into account the gap */
+    width: calc(50% - 20px); /* 2 albums per row on tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  .album {
+    width: 100%; /* 1 album per row on mobile */
   }
 }
