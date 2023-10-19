@@ -1,17 +1,18 @@
 .artist-names h3 {
   font-family: Helvetica, sans-serif;
-  color: #c7c7c7;
-  font-size: 15px;
+  color: #a0a0a0;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
 .artist-names a {
   font-family: Helvetica, sans-serif;
-  color: #c7c7c7;
-  font-size: 15px;
+  color: #a0a0a0;
+  font-size: 14px;
   text-decoration: none;
 }
 
 .artist-names a:hover {
   text-decoration: underline;
-  color: #c7c7c7;
+  color: #a0a0a0;
 }

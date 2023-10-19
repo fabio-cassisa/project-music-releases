@@ -6,12 +6,14 @@ import "../styles/Album.css";
 export const App = () => {
   return (
     <>
-      <Header />
+      <div className="main-wrapper">
+        <Header />
         <section className="album-container">
         {data.albums.items.map((album) => (
           <Album key={album.id} albumData={album} />
         ))}
         </section>
+      </div>
     </>
   );
 };

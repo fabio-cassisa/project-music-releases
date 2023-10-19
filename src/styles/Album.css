@@ -5,11 +5,17 @@
   box-sizing: border-box;
 }
 
+.main-wrapper {
+  padding: 20px; /* Add some padding to separate from the edges */
+}
+
 .album-container {
+  padding-top: 20px;
+  padding-left: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 20px; /* Add some padding to separate from the edges */
+  justify-content: flex-start;
+  align-items: center;
   gap: 20px; /* Add gap between album items */
 }
 
@@ -18,7 +24,6 @@
   margin-bottom: 20px;
   width: 100%; /* Updated width for responsive design */
   max-width: 640px; /* Limit maximum width to 640px */
-  position: relative;
   cursor: pointer;
   display: flex; /* Make the album a flex container */
   flex-direction: column; /* Arrange items vertically */
@@ -28,6 +33,7 @@
   transition: transform 0.2s ease-in-out;
   align-items: center; /* Center horizontally */
   text-align: center; /* Center text content */
+  position: relative; /* Z-index control */
 }
 
 .album img {
@@ -59,14 +65,15 @@
 }
 
 .play-button img {
-  filter: invert(1);
-  width: 40px; /* Set play button size */
-  height: 40px;
-  transition: transform 0.2s ease-in-out; /* Add transform transition */
+  filter: invert(0.7);
+  width: 80px; /* Set play button size */
+  height: 80px;
+  transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out; /* Add transform transition */
 }
 
 .play-button:hover img {
   transform: scale(1.1); /* Slightly enlarge play button on hover */
+  filter: invert(1); /* Full opacity on hover */
 }
 
 .favorite-button img,
