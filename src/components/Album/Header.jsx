@@ -1,8 +1,7 @@
 import "../../styles/Header.css";
 
 export const Header = () => (
-  <header>
-    <h1 className="header">Music Albums</h1>
-    <p>Made by Carl and Fabio </p>
+  <header className="header-container">
+    <h1 className="header">New Albums & Singles</h1>
   </header>
 );

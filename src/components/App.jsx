@@ -21,7 +21,8 @@ export const App = () => {
 
   return (
     <>
-      <Header />
+      <div className="main-wrapper">
+        <Header />
       <div className="button-container">
         <button onClick={() => setFilterType("all")}>All</button>
         <button onClick={() => setFilterType("singles")}>Singles</button>
@@ -32,6 +33,7 @@ export const App = () => {
           <Album key={album.id} albumData={album} />
         ))}
       </section>
+      </div>
     </>
   );
 };

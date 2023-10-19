@@ -1,9 +1,16 @@
+.header-container {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #3f3f3f;
+}
+
 .header {
   font-family: Helvetica, sans-serif;
-  font-size: 26px;
+  font-size: 22px;
   display: flex;
   color: #fff;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 p {
