@@ -19,6 +19,13 @@
   gap: 20px; /* Add gap between album items */
 }
 
+.button-container {
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  padding: 20px;
+}
+
 .album {
   position: relative;
   margin-bottom: 20px;
@@ -34,6 +41,25 @@
   align-items: center; /* Center horizontally */
   text-align: center; /* Center text content */
   position: relative; /* Z-index control */
+}
+
+/* Base Styles for the Button */
+button {
+  background-color: #333; /* Dark grayish color */
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Spacing inside the button */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Hand cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover */
+  font-size: 1rem; /* Font size */
+  margin: 5px; /* Spacing between buttons */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Hover Effect */
+button:hover {
+  background-color: #555; /* Lighten the button on hover */
 }
 
 .album img {
@@ -87,7 +113,9 @@
 
 .favorite-button:hover img,
 .more-button:hover img {
-  transform: scale(1.1); /* Slightly enlarge favorite and more buttons on hover */
+  transform: scale(
+    1.1
+  ); /* Slightly enlarge favorite and more buttons on hover */
 }
 
 .play-button,
@@ -99,19 +127,19 @@
 }
 
 /* Media Queries */
-@media (min-width: 769px) {
+@media (min-width: 1201px) {
   .album {
     width: calc(25% - 20px); /* 4 albums per row on desktop */
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .album {
     width: calc(50% - 20px); /* 2 albums per row on tablet */
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .album {
     width: 100%; /* 1 album per row on mobile */
   }
