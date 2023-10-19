@@ -58,7 +58,7 @@ button {
 }
 
 /* Hover Effect */
-button:hover {
+.button:hover {
   background-color: #555; /* Lighten the button on hover */
 }
 

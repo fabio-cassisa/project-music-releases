@@ -1,7 +1,7 @@
 import "../../styles/Header.css";
 
-export const Header = () => (
+export const Header = ({ headerText }) => (
   <header className="header-container">
-    <h1 className="header">New Albums & Singles</h1>
+    <h1 className="header">{headerText}</h1>
   </header>
 );
