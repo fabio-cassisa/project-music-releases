@@ -14,6 +14,26 @@
             "name": "Capo",
             "type": "artist",
             "uri": "spotify:artist:5y9wg9qkGBl0n9v9RzaPKu"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/4PvnP3yCzrT289cX3wCdOx"
+            },
+            "href": "https://api.spotify.com/v1/artists/4PvnP3yCzrT289cX3wCdOx",
+            "id": "4PvnP3yCzrT289cX3wCdOx",
+            "name": "Yung Hurn",
+            "type": "artist",
+            "uri": "spotify:artist:4PvnP3yCzrT289cX3wCdOx"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/2SrSdSvpminqmStGELCSNd"
+            },
+            "href": "https://api.spotify.com/v1/artists/2SrSdSvpminqmStGELCSNd",
+            "id": "2SrSdSvpminqmStGELCSNd",
+            "name": "Stormzy",
+            "type": "artist",
+            "uri": "spotify:artist:2SrSdSvpminqmStGELCSNd"
           }
         ],
         "available_markets": [
@@ -242,6 +262,16 @@
             "name": "102 Boyz",
             "type": "artist",
             "uri": "spotify:artist:78TTCmh2koperK5NBn7DgR"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/6rYogEVj60BCIsLukpAnwr"
+            },
+            "href": "https://api.spotify.com/v1/artists/6rYogEVj60BCIsLukpAnwr",
+            "id": "6rYogEVj60BCIsLukpAnwr",
+            "name": "Scarlxrd",
+            "type": "artist",
+            "uri": "spotify:artist:6rYogEVj60BCIsLukpAnwr"
           }
         ],
         "available_markets": [
