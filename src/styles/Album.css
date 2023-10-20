@@ -125,9 +125,16 @@
 }
 
 .favorite-button img,
-.more-button img,
-.info-button img {
+.more-button img {
   filter: invert(0.85);
+  width: 30px; /* Set favorite and more button size */
+  height: 30px;
+  margin: 10px; /* Add margin to separate buttons */
+  transition: transform 0.2s ease-in-out; /* Add transform transition */
+}
+
+.info-button img {
+  filter: invert(0.65);
   width: 30px; /* Set favorite and more button size */
   height: 30px;
   margin: 10px; /* Add margin to separate buttons */
@@ -150,6 +157,25 @@
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.album-details {
+  position: absolute;
+  top: 10%; /* You can adjust this to position it vertically as you like */
+  left: 10%; /* Adjust this for horizontal positioning */
+  width: 80%; /* Make it 80% of the album's width */
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ff6b6b; /* Soft red color */
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  z-index: 5; /* Ensure it's above other elements */
+  display: none; /* Initially hidden */
+}
+
+.album:hover .album-details {
+  display: block; /* Show it when album is hovered */
 }
 
 /* Media Queries */
