@@ -92,14 +92,14 @@
 }
 
 .play-button img {
-  filter: invert(0.7);
-  width: 80px; /* Set play button size */
-  height: 80px;
+  filter: invert(1);
+  width: 40px; /* Set play button size */
+  height: 40px;
   transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out; /* Add transform transition */
 }
 
 .play-button:hover img {
-  transform: scale(1.1); /* Slightly enlarge play button on hover */
+  transform: scale(1.3); /* Slightly enlarge play button on hover */
   filter: invert(1); /* Full opacity on hover */
 }
 
@@ -115,7 +115,7 @@
 .favorite-button:hover img,
 .more-button:hover img {
   transform: scale(
-    1.1
+    1.3
   ); /* Slightly enlarge favorite and more buttons on hover */
 }
 
