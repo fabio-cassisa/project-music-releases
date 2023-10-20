@@ -11,9 +11,11 @@ export const Album = ({ albumData }) => {
   return (
     <div className="album">
       <div className="cover-wrapper">
-        <button className="info-button">
-          <img src={FavoriteIcon} alt="Favorite" />
-        </button>
+        <div className="info">
+          <button className="info-button">
+            <img src={InfoIcon} alt="MoreInfo" />
+          </button>
+        </div>
         <div className="album-overlay">
           <button className="favorite-button">
             <img src={FavoriteIcon} alt="Favorite" />
