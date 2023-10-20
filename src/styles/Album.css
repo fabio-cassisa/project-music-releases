@@ -44,7 +44,7 @@
 }
 
 /* Base Styles for the Button */
-button {
+.button-top {
   background-color: #333; /* Dark grayish color */
   color: #fff; /* White text color */
   padding: 10px 20px; /* Spacing inside the button */
@@ -70,11 +70,12 @@ button {
 
 .album-overlay {
   display: flex;
-  justify-content: space-around; /* Center buttons horizontally */
+  justify-content: center; /* Center buttons horizontally */
   align-items: center; /* Center buttons vertically */
   opacity: 0; /* Set initial opacity to 0 */
   transition: opacity 0.3s;
   position: absolute;
+  gap: 20px;
   top: 0;
   left: 0;
   right: 0;
