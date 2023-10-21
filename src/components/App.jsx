@@ -50,6 +50,22 @@ export const App = () => {
           <button onClick={() => setFilterType("all")}>All</button>
           <button onClick={() => setFilterType("singles")}>Singles</button>
           <button onClick={() => setFilterType("albums")}>Albums</button>
+          <button className="button-top" onClick={() => setFilterType("all")}>
+            All
+          </button>
+          <button
+            className="button-top"
+            onClick={() => setFilterType("singles")}
+          >
+            Singles
+          </button>
+          <button
+            className="button-top"
+            onClick={() => setFilterType("albums")}
+          >
+            Albums
+          </button>
+
         </div>
         <Header headerText={headerText} />
         <section className="album-container">

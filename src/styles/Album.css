@@ -16,7 +16,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  gap: 20px; /* Add gap between album items */
+  gap: 25px; /* Add gap between album items */
 }
 
 .button-container {
@@ -44,7 +44,7 @@
 }
 
 /* Base Styles for the Button */
-button {
+.button-top {
   background-color: #333; /* Dark grayish color */
   color: #fff; /* White text color */
   padding: 10px 20px; /* Spacing inside the button */
@@ -58,7 +58,7 @@ button {
 }
 
 /* Hover Effect */
-.button:hover {
+.button-top:hover {
   background-color: #555; /* Lighten the button on hover */
 }
 
@@ -70,16 +70,34 @@ button {
 
 .album-overlay {
   display: flex;
-  justify-content: space-around; /* Center buttons horizontally */
+  justify-content: center; /* Center buttons horizontally */
   align-items: center; /* Center buttons vertically */
   opacity: 0; /* Set initial opacity to 0 */
   transition: opacity 0.3s;
   position: absolute;
+  gap: 20px;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.6); /* Add a background overlay */
+}
+
+.info {
+  display: flex;
+  justify-content: flex-end; /* Align content to the right horizontally */
+  align-items: flex-start; /* Align content to the top vertically */
+  opacity: 0; /* Set initial opacity to 0 */
+  transition: opacity 0.3s;
+  position: absolute;
+  gap: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  /* Add some padding for margin-like space around the icon */
+  padding: 10px;
 }
 
 .cover-wrapper:hover {
@@ -90,21 +108,33 @@ button {
   opacity: 1; /* Fade in the overlay on hover */
 }
 
+.cover-wrapper:hover .info {
+  opacity: 1; /* Fade in the overlay on hover */
+}
+
 .play-button img {
   filter: invert(0.7);
-  width: 80px; /* Set play button size */
-  height: 80px;
+  width: 40px; /* Set play button size */
+  height: 40px;
   transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out; /* Add transform transition */
 }
 
 .play-button:hover img {
-  transform: scale(1.1); /* Slightly enlarge play button on hover */
+  transform: scale(1.3); /* Slightly enlarge play button on hover */
   filter: invert(1); /* Full opacity on hover */
 }
 
 .favorite-button img,
 .more-button img {
-  filter: invert(1);
+  filter: invert(0.85);
+  width: 30px; /* Set favorite and more button size */
+  height: 30px;
+  margin: 10px; /* Add margin to separate buttons */
+  transition: transform 0.2s ease-in-out; /* Add transform transition */
+}
+
+.info-button img {
+  filter: invert(0.65);
   width: 30px; /* Set favorite and more button size */
   height: 30px;
   margin: 10px; /* Add margin to separate buttons */
@@ -112,18 +142,40 @@ button {
 }
 
 .favorite-button:hover img,
-.more-button:hover img {
+.more-button:hover img,
+.info-button:hover img {
   transform: scale(
-    1.1
+    1.3
   ); /* Slightly enlarge favorite and more buttons on hover */
+  filter: invert(1); /* Full opacity on hover */
 }
 
 .play-button,
 .favorite-button,
-.more-button {
+.more-button,
+.info-button {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.album-details {
+  position: absolute;
+  top: 10%; /* You can adjust this to position it vertically as you like */
+  left: 10%; /* Adjust this for horizontal positioning */
+  width: 80%; /* Make it 80% of the album's width */
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ff6b6b; /* Soft red color */
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  z-index: 5; /* Ensure it's above other elements */
+  display: none; /* Initially hidden */
+}
+
+.album:hover .album-details {
+  display: block; /* Show it when album is hovered */
 }
 
 /* Media Queries */
