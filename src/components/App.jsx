@@ -44,12 +44,9 @@ export const App = () => {
     <>
       <div className="main-wrapper">
         <div className="button-container">
-          <button onClick={toggleSidebar}>
+          <button className="button-top" onClick={toggleSidebar}>
               {isSidebarOpen ? "Hide Playlists" : "Show Playlists"}
           </button>
-          <button onClick={() => setFilterType("all")}>All</button>
-          <button onClick={() => setFilterType("singles")}>Singles</button>
-          <button onClick={() => setFilterType("albums")}>Albums</button>
           <button className="button-top" onClick={() => setFilterType("all")}>
             All
           </button>
