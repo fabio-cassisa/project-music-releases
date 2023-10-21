@@ -16,7 +16,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  gap: 20px; /* Add gap between album items */
+  gap: 25px; /* Add gap between album items */
 }
 
 .button-container {
