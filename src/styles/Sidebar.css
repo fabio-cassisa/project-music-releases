@@ -1,0 +1,64 @@
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #505050;
+    transition: right 0.3s ease-in-out;
+    overflow-y: scroll;
+    z-index: 1; /* Add z-index to make sure sidebar is on top of content */
+  }
+  
+  .sidebar.open {
+    right: 0;
+  }
+  
+  .sidebar-content {
+    padding: 20px;
+  }
+  
+  /* Style for playlist items in the sidebar */
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 10px 0;
+  }
+
+  .sidebar h2 {
+    color: white;
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white; /* Text color */
+    transition: color 0.3s; /* Add a color transition on hover */
+  }
+  
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
+  
+  .sidebar img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  /* Media Query for smaller screens */
+  @media (max-width: 768px) {
+    .sidebar {
+      right: -100%; /* Move sidebar off-screen on smaller screens */
+    }
+  
+    .main-wrapper.sidebar-open {
+      overflow: hidden; /* Prevent scrolling of the main content when sidebar is open on mobile */
+    }
+  }
+  

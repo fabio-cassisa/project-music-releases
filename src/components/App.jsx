@@ -1,8 +1,10 @@
-import data from "../data.json";
-import { Album } from "./Album/Album";
-import { Header } from "./Album/Header";
-import "../styles/Album.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import { Sidebar } from './Sidebar';
+import { Album } from './Album/Album';
+import { Header } from './Album/Header';
+import data from '../data.json';
+import stretchedGoalsData from "../stretched-goal.json";
+import '../styles/Album.css';
 
 export const App = () => {
   const [filterType, setFilterType] = useState("all");
@@ -30,10 +32,24 @@ export const App = () => {
     }
   }, [filterType]);
 
+  // Define a state to control the visibility of the sidebar
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  // Toggle the sidebar
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <>
       <div className="main-wrapper">
         <div className="button-container">
+          <button onClick={toggleSidebar}>
+              {isSidebarOpen ? "Hide Playlists" : "Show Playlists"}
+          </button>
+          <button onClick={() => setFilterType("all")}>All</button>
+          <button onClick={() => setFilterType("singles")}>Singles</button>
+          <button onClick={() => setFilterType("albums")}>Albums</button>
           <button className="button-top" onClick={() => setFilterType("all")}>
             All
           </button>
@@ -49,6 +65,7 @@ export const App = () => {
           >
             Albums
           </button>
+
         </div>
         <Header headerText={headerText} />
         <section className="album-container">
@@ -56,6 +73,23 @@ export const App = () => {
             <Album key={album.id} albumData={album} />
           ))}
         </section>
+      </div>
+
+      {/* Sidebar */}
+      <div className={`sidebar ${isSidebarOpen ? "open" : "closed"}`}>
+        <div className="sidebar-content">
+          <h2>{stretchedGoalsData.message}</h2>
+          <ul>
+            {stretchedGoalsData.playlists.items.map((playlist) => (
+              <li key={playlist.id}>
+                <a href={playlist.external_urls.spotify}>
+                  <img src={playlist.images[0].url} alt={playlist.name} />
+                  <span>{playlist.name}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </>
   );
