@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Sidebar } from './Sidebar';
-import { Album } from './Album/Album';
-import { Header } from './Album/Header';
-import data from '../data.json';
+import React, { useState, useEffect, useRef } from "react";
+import { Sidebar } from "./Sidebar";
+import { Album } from "./Album/Album";
+import { Header } from "./Album/Header";
+import data from "../data.json";
 import stretchedGoalsData from "../stretched-goal.json";
-import '../styles/Album.css';
+import "../styles/Album.css";
 
 export const App = () => {
   const [filterType, setFilterType] = useState("all");
@@ -32,10 +32,29 @@ export const App = () => {
     }
   }, [filterType]);
 
-  // Define a state to control the visibility of the sidebar
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const sidebarRef = useRef(null);
+  const buttonRef = useRef(null);
 
-  // Toggle the sidebar
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target) &&
+        !buttonRef.current.contains(event.target) &&
+        isSidebarOpen
+      ) {
+        setIsSidebarOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isSidebarOpen]);
+
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -44,9 +63,6 @@ export const App = () => {
     <>
       <div className="main-wrapper">
         <div className="button-container">
-          <button className="button-top" onClick={toggleSidebar}>
-              {isSidebarOpen ? "Hide Playlists" : "Show Playlists"}
-          </button>
           <button className="button-top" onClick={() => setFilterType("all")}>
             All
           </button>
@@ -62,7 +78,15 @@ export const App = () => {
           >
             Albums
           </button>
-
+        </div>
+        <div className="button-playlist-div">
+          <button
+            className="button-playlist"
+            onClick={toggleSidebar}
+            ref={buttonRef}
+          >
+            {isSidebarOpen ? "Hide Playlists" : "Show Playlists"}
+          </button>
         </div>
         <Header headerText={headerText} />
         <section className="album-container">
@@ -72,8 +96,10 @@ export const App = () => {
         </section>
       </div>
 
-      {/* Sidebar */}
-      <div className={`sidebar ${isSidebarOpen ? "open" : "closed"}`}>
+      <div
+        className={`sidebar ${isSidebarOpen ? "open" : "closed"}`}
+        ref={sidebarRef}
+      >
         <div className="sidebar-content">
           <h2>{stretchedGoalsData.message}</h2>
           <ul>
