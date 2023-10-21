@@ -21,9 +21,18 @@
 
 .button-container {
   display: flex; /* Enable flexbox */
-  justify-content: center; /* Center items horizontally */
+  justify-content: left; /* Center items horizontally */
   align-items: center; /* Center items vertically */
-  padding: 20px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+}
+
+.button-playlist-div {
+  display: flex; /* Enable flexbox */
+  justify-content: left; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  padding-bottom: 5px;
+  padding-left: 15px;
 }
 
 .album {
@@ -54,12 +63,29 @@
   transition: background-color 0.3s; /* Smooth transition for hover */
   font-size: 0.8rem; /* Font size */
   margin: 5px; /* Spacing between buttons */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Base Styles for the Button */
+.button-playlist {
+  background-color: #194060; /* Dark grayish color */
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Spacing inside the button */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Hand cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover */
+  font-size: 0.8rem; /* Font size */
+  margin: 5px; /* Spacing between buttons */
 }
 
 /* Hover Effect */
 .button-top:hover {
   background-color: #555; /* Lighten the button on hover */
+}
+
+/* Hover Effect */
+.button-playlist:hover {
+  background-color: #0f2639; /* Lighten the button on hover */
 }
 
 .album img {

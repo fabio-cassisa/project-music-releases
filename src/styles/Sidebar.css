@@ -1,64 +1,89 @@
 /* Sidebar Styles */
 .sidebar {
-    position: fixed;
-    top: 0;
-    right: -300px;
-    width: 300px;
-    height: 100%;
-    background-color: #505050;
-    transition: right 0.3s ease-in-out;
-    overflow-y: scroll;
-    z-index: 1; /* Add z-index to make sure sidebar is on top of content */
-  }
-  
-  .sidebar.open {
-    right: 0;
-  }
-  
-  .sidebar-content {
-    padding: 20px;
-  }
-  
-  /* Style for playlist items in the sidebar */
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar ul li {
-    margin: 10px 0;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background: linear-gradient(
+    160deg,
+    #505050,
+    #3c3c3c
+  ); /* Gradient background */
+  transition: right 0.3s ease-in-out;
+  overflow-y: scroll;
+  z-index: 1;
+  box-shadow: -12px 0 20px -10px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar-content {
+  padding: 20px;
+}
+
+/* Style for playlist items in the sidebar */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar h2 {
+  color: white;
+  font-weight: bold;
+  margin-top: 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.sidebar a:hover {
+  text-decoration: none;
+  color: #4682b4;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.button {
+  background-color: #4682b4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: 0.3s background-color;
+}
+
+.button:hover {
+  background-color: #5a92c5;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .sidebar {
+    right: -100%;
   }
 
-  .sidebar h2 {
-    color: white;
+  .main-wrapper.sidebar-open {
+    overflow: hidden;
   }
-  
-  .sidebar a {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    color: white; /* Text color */
-    transition: color 0.3s; /* Add a color transition on hover */
-  }
-  
-  .sidebar a:hover {
-    text-decoration: underline;
-  }
-  
-  .sidebar img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-  }
-  
-  /* Media Query for smaller screens */
-  @media (max-width: 768px) {
-    .sidebar {
-      right: -100%; /* Move sidebar off-screen on smaller screens */
-    }
-  
-    .main-wrapper.sidebar-open {
-      overflow: hidden; /* Prevent scrolling of the main content when sidebar is open on mobile */
-    }
-  }
-  
+}
