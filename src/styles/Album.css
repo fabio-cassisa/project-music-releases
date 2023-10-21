@@ -52,7 +52,7 @@ button {
   border-radius: 5px; /* Rounded corners */
   cursor: pointer; /* Hand cursor on hover */
   transition: background-color 0.3s; /* Smooth transition for hover */
-  font-size: 1rem; /* Font size */
+  font-size: 0.8rem; /* Font size */
   margin: 5px; /* Spacing between buttons */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
