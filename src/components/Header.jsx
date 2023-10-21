@@ -1,4 +1,4 @@
-import "../../styles/Header.css";
+import "../styles/Header.css";
 
 export const Header = ({ headerText }) => (
   <header className="header-container">

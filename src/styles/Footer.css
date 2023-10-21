@@ -1,0 +1,16 @@
+.footer-container {
+  position: relative;
+  padding-left: 20px;
+  padding-top: 30px;
+  padding-bottom: 5px;
+}
+
+.footer {
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  padding-top: 10px;
+  border-top: 1px solid #3f3f3f;
+}

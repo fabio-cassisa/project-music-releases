@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Sidebar } from './Sidebar';
 import { Album } from './Album/Album';
-import { Header } from './Album/Header';
+import { Header } from './Header';
 import data from '../data.json';
 import stretchedGoalsData from "../stretched-goal.json";
 import '../styles/Album.css';
+import { Footer } from './Footer';
 
 export const App = () => {
   const [filterType, setFilterType] = useState("all");
@@ -70,6 +71,7 @@ export const App = () => {
             <Album key={album.id} albumData={album} />
           ))}
         </section>
+        <Footer />
       </div>
 
       {/* Sidebar */}
