@@ -5,8 +5,8 @@ import { Album } from "./Album/Album";
 import { AlbumHeader } from "./Album/AHeader";
 import data from "../data.json";
 import stretchedGoalsData from "../stretched-goal.json";
-import '../styles/Album.css';
-import { Footer } from './Footer';
+import "../styles/Album.css";
+import { Footer } from "./Footer";
 
 export const App = () => {
   const [filterType, setFilterType] = useState("all");
@@ -65,6 +65,15 @@ export const App = () => {
     <>
       <div className="main-wrapper">
         <Header />
+        <div className="button-playlist-div">
+          <button
+            className="button-playlist"
+            onClick={toggleSidebar}
+            ref={buttonRef}
+          >
+            {isSidebarOpen ? "Hide Playlists" : "Show Playlists"}
+          </button>
+        </div>
         <div className="button-container">
           <button className="button-top" onClick={() => setFilterType("all")}>
             All
@@ -80,15 +89,6 @@ export const App = () => {
             onClick={() => setFilterType("albums")}
           >
             Albums
-          </button>
-        </div>
-        <div className="button-playlist-div">
-          <button
-            className="button-playlist"
-            onClick={toggleSidebar}
-            ref={buttonRef}
-          >
-            {isSidebarOpen ? "Hide Playlists" : "Show Playlists"}
           </button>
         </div>
         <AlbumHeader AlbumHeaderText={AlbumHeaderText} />

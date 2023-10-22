@@ -18,5 +18,7 @@
 }
 
 .separator {
+  font-family: Helvetica, sans-serif;
   color: #a0a0a0;
+  font-size: 14px;
 }
