@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Header } from "./Header";
 import { Sidebar } from "./Sidebar";
 import { Album } from "./Album/Album";
-import { Header } from "./Header";
+import { AlbumHeader } from "./Album/AHeader";
 import data from "../data.json";
 import stretchedGoalsData from "../stretched-goal.json";
 import '../styles/Album.css';
@@ -9,7 +10,7 @@ import { Footer } from './Footer';
 
 export const App = () => {
   const [filterType, setFilterType] = useState("all");
-  const [headerText, setHeaderText] = useState("New Albums & Singles");
+  const [AlbumHeaderText, setHeaderText] = useState("New Albums & Singles");
 
   // Implement the filtering logic
   let filteredAlbums = data.albums.items;
@@ -63,6 +64,7 @@ export const App = () => {
   return (
     <>
       <div className="main-wrapper">
+        <Header />
         <div className="button-container">
           <button className="button-top" onClick={() => setFilterType("all")}>
             All
@@ -89,7 +91,7 @@ export const App = () => {
             {isSidebarOpen ? "Hide Playlists" : "Show Playlists"}
           </button>
         </div>
-        <Header headerText={headerText} />
+        <AlbumHeader AlbumHeaderText={AlbumHeaderText} />
         <section className="album-container">
           {filteredAlbums.map((album) => (
             <Album key={album.id} albumData={album} />
