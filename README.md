@@ -1,13 +1,38 @@
-# Music Releases , Week 4 project by Carl Öberg and Fabio Cassisa
+# music releases
 
-We created a responsive React app to showcase music albums with interactive hover effects. The app displays album covers, names, and artists, each with links to external URLs. We followed the provided design, using modular components and data sourced from a JSON file.
+browse new albums and singles from spotify — a react app rendering 50 releases from static JSON data, with filtering, album detail overlays, and a playlist sidebar.
 
-### The Problem
+## why
 
-We started by planning our component structure in React and it was pretty straightforward. We chose a folder structure where we separate the jsx files from the css, we might choose a different structure for the next project. The playlist was a pretty tough nut to crack, but it was a great learning curve on using components and general knowledge of React and CSS.
+the original project explored react component composition and data-driven UI — mapping over album objects, conditional rendering, and responsive layout. the glow-up refined the visual layer: CSS custom properties, active filter states, css grid replacing flexbox hacks, and a cleaner sidebar.
 
-After this, we tried to challenge ourselves by making filters, adding new info to each album, and a sidebar to show the playlist. We succeeded to implement everything but we had many difficulties with the amount of CSS to have in order to get the responsiveness we needed. Still now the final UI (for the buttons and the playlist button) is still yet to be improved.
+## how it works
 
-### View it live
+- **filter by type** — all, singles, or albums with visual active state
+- **album hover overlay** — play, favorite, more, and info buttons appear on cover hover
+- **info toggle** — click ℹ️ to reveal release date and track count
+- **playlist sidebar** — slides in from the right with 10 editor's picks, closes on outside click
+- **responsive grid** — 4 columns → 2 → 1 across breakpoints
 
-Link to Netlify: https://music-releases-carl-fabio.netlify.app/
+## screenshot
+
+![desktop view](docs/desktop.png)
+
+## stack
+
+`react` · `vite` · `javascript` · `css custom properties` · `css grid` · `spotify data`
+
+## run locally
+
+```bash
+npm install
+npm run dev
+```
+
+## status
+
+🟢 shipped — originally a Technigo bootcamp project, redesigned with Spotify-green accent and polished UI
+
+---
+
+<sub>built by fabio cassisa · paired with [carl öberg](https://github.com/Calleobe)</sub>
