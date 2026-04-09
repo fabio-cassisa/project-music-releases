@@ -1,20 +1,15 @@
 .header-container {
-  position: relative;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 30px;
-  padding-bottom: 5px;
+  padding: 24px 4px 16px;
 }
 
 .header {
-  font-family: Helvetica, sans-serif;
+  font-family: var(--font);
+  font-size: 1.5rem;
+  font-weight: 700;
   display: flex;
-  color: #fff;
+  color: var(--text-primary);
   justify-content: center;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #3f3f3f;
-}
-
-h1 {
-  font-size: 26px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: -0.02em;
 }

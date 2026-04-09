@@ -1,24 +1,21 @@
-.artist-names h3 {
-  font-family: Helvetica, sans-serif;
-  color: #a0a0a0;
-  font-size: 14px;
-  margin-top: 10px;
+.artist-names {
+  margin-top: 4px;
 }
 
 .artist-names a {
-  font-family: Helvetica, sans-serif;
-  color: #a0a0a0;
-  font-size: 14px;
+  font-family: var(--font);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
   text-decoration: none;
+  transition: color var(--transition);
 }
 
 .artist-names a:hover {
-  text-decoration: underline;
-  color: #a0a0a0;
+  color: var(--text-primary);
 }
 
 .separator {
-  font-family: Helvetica, sans-serif;
-  color: #a0a0a0;
-  font-size: 14px;
+  font-family: var(--font);
+  color: var(--text-muted);
+  font-size: 0.8rem;
 }

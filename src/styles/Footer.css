@@ -1,32 +1,23 @@
 .footer-container {
-  position: relative;
-  padding-left: 20px;
-  padding-top: 30px;
-  padding-bottom: 5px;
+  padding: 32px 4px 16px;
 }
 
 .footer {
-  font-family: Helvetica, sans-serif;
-  font-size: 14px;
+  font-family: var(--font);
+  font-size: 0.8rem;
   display: flex;
-  color: #fff;
+  color: var(--text-muted);
   justify-content: center;
-  padding-top: 10px;
-  border-top: 1px solid #3f3f3f;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
-
 
 .footer-container a {
   text-decoration: none;
-  color: #fff; 
-  transition: text-decoration 0.2s;
+  color: var(--text-secondary);
+  transition: color var(--transition);
 }
 
 .footer-container a:hover {
-  text-decoration: underline;
-}
-
-.footer-container a:active {
-  text-decoration: none; 
-  color: #fff; 
+  color: var(--accent);
 }

@@ -1,17 +1,12 @@
 .album-header-container {
-  position: relative;
-  padding-left: 20px;
-  padding-top: 30px;
-  padding-right: 20px;
-  padding-bottom: 5px;
+  padding: 12px 4px 8px;
 }
 
 .album-header {
-  font-family: Helvetica, sans-serif;
-  font-size: 22px;
-  display: flex;
-  color: #fff;
-  justify-content: flex-start;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #3f3f3f;
+  font-family: var(--font);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
 }
